@@ -11,8 +11,9 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Hello, my name is %s!", r.URL.Path[1:])
 }
 
-func csvHandler() {
-
+func csvHandler(w http.ResponseWriter, r *http.Request) {
+	r.ParseMultipartForm( 30 >> 20)
+	file, _, err  = r.FormFile("csv_file")
 }
 
 func main() {
